@@ -1,2 +1,2 @@
 # flashcardapp
-A desktop flashcard app
+A desktop flashcard app. 
