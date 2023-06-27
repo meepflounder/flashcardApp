@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+
 module.exports = {
   packagerConfig: {
     asar: true,
@@ -27,4 +30,11 @@ module.exports = {
       config: {},
     },
   ],
+  hooks: {
+    packageAfterCopy: async (config, buildPath, electronVersion, platform, arch) => {
+      var src = path.join(__dirname, '../react-app/build/');
+      var dst = buildPath;
+      fs.cpSync(src, dst, {recursive: true});
+    }
+  }
 };

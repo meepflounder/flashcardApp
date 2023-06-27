@@ -10,8 +10,15 @@ const createWindow = () => {
       }
     })
   
-    win.loadFile('index.html')
+    
+    if(app.isPackaged) {
+      win.loadFile('index.html'); // prod
+    }else{
+      win.loadURL('http://localhost:3000'); // dev
+    }
+   
 }
+
 
 app.whenReady().then(() => {
     createWindow()
