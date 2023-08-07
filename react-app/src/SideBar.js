@@ -1,7 +1,13 @@
 import React from 'react';
-import { Flex, Text, Box, Divider, Heading } from "@chakra-ui/react";
+import { Flex, Text, Box, Divider, Heading,
+         Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon
+       } from "@chakra-ui/react";
+
 
 const folderList = ["Neuroscience", "Computer Science", "English"];
+const neuroscienceList = ["Neuropharmacology", "Neural Development"];
+const csList = ["Discrete Structures", "Data Structures"];
+const englishList = ["Grammar", "Books"]; 
 
 
 
@@ -45,6 +51,28 @@ export default function SideBar() {
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
                         {folderList.map(txt => <Text color = "blue">{txt}</Text>)}
+
+
+                        <Accordion defaultIndex={[0]} allowMultiple>
+
+                        {/* while we have something in our array, we create these accordion items */}
+                            <AccordionItem>
+                                <h2>
+                                <AccordionButton>
+                                    <Box as="span" flex='1' textAlign='left'>
+                                    Folder Name
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                </h2>
+                                <AccordionPanel pb={4}>
+                                Decks within the corresponding folder name
+                                </AccordionPanel>
+                            </AccordionItem>
+                            </Accordion>
+
+
+
                     </Flex>
                 </Flex>
             </Flex>
@@ -52,3 +80,5 @@ export default function SideBar() {
     </Box>
     )
 }
+
+
