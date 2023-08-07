@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import { Flex, Text, Box, IconButton, Divider, Avatar, Heading } from "@chakra-ui/react";
 
+const folderList = ["Neuroscience", "Computer Science", "English"];
+
+
+
 export default function SideBar() {
     return (
     <Box
@@ -40,9 +44,9 @@ export default function SideBar() {
                     {/* <Avatar size="sm" src = "___.jpg" /> */}
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
+                        {folderList.map(txt => <Text color = "blue">{txt}</Text>)}
                     </Flex>
                 </Flex>
-
             </Flex>
         </Flex>
     </Box>
