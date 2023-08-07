@@ -82,10 +82,18 @@ export default function SideBar() {
                                 </AccordionItem>
                             ))}
                         </Accordion>
-
                     </Flex>
                 </Flex>
             </Flex>
+            <Menu>
+                <MenuButton as={Button}>
+                    Add New
+                </MenuButton>
+                <MenuList>
+                    <MenuItem>New Deck</MenuItem>
+                    <MenuItem>New Folder</MenuItem>
+                </MenuList>
+            </Menu>
         </Flex>
     </Box>
     )
