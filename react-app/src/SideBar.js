@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
-import { Flex, Text, Box, IconButton, Divider, Avatar, Heading } from "@chakra-ui/react";
+import React from 'react';
+import { Flex, Text, Box, Divider, Heading } from "@chakra-ui/react";
 
 const folderList = ["Neuroscience", "Computer Science", "English"];
 
 
 
-//have a flex within the box to create a side bar. 
 export default function SideBar() {
     return (
     <Box
         w = "100%"
         align = "right"
     > 
+
+{/* flex within the box to create a side bar area */}
         <Flex
             pos="sitcky"
             left="5"
@@ -22,7 +23,7 @@ export default function SideBar() {
             justifyContent="space-between"
             bg = "purple"
         >
-            
+{/* flex within the flex allows us to seperate our flex into 2 areas (2 more flexes) */}
             <Flex
                 p="5%"
                 flexDir="column"
@@ -30,18 +31,17 @@ export default function SideBar() {
                 alignItems="flex-start"
                 mb={4}
             >
-
+{/* area 1 is for the username stuff */}
                 <Flex mt={1} mb={3} align="center">
-                    {/* <Avatar size="sm" src = "___.jpg" /> */}
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Flashcard App</Heading>
                         <Text as="h3" size ="xs" color = "gray"> Username </Text>
                     </Flex>
                 </Flex>
-                <Divider /> 
 
+{/* area 2 is for the folders and decks */}
+                <Divider /> 
                 <Flex mt={3} align="center">
-                    {/* <Avatar size="sm" src = "___.jpg" /> */}
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
                         {folderList.map(txt => <Text color = "blue">{txt}</Text>)}
