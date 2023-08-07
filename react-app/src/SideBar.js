@@ -50,6 +50,7 @@ export default function SideBar() {
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
 
+{/* accordion for all the folders and decks */}
                         <Accordion defaultIndex={[0]} allowMultiple>
                             {Object.keys(folderData).map((folderName, index) => (
                                 <AccordionItem key={index}>
