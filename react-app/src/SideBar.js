@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Text, Box, Divider, Heading,
-         Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon
+import { Flex, Text, Box, Divider, Heading, Button,
+         Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
+         Menu, MenuButton, MenuList, MenuItem, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider
        } from "@chakra-ui/react";
 
 
@@ -40,7 +41,16 @@ export default function SideBar() {
                 <Flex mt={1} mb={3} align="center">
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Flashcard App</Heading>
-                        <Text as="h3" size ="xs" color = "gray"> Username </Text>
+
+                        <Menu>
+                            <MenuButton as={Button}>
+                                Username
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem>Account Settings</MenuItem>
+                                <MenuItem>Log Out</MenuItem>
+                            </MenuList>
+                        </Menu>
                     </Flex>
                 </Flex>
 
