@@ -13,9 +13,14 @@ const folderData = {
 
 export default function SideBar() {
     return (
+
+        
     <Box
         w = "100%"
         align = "right"
+        bgImage="url('flashcardapp/react-app/public/backgroundImage.png')"
+        bgPosition="center"
+        bgRepeat="no-repeat"
     > 
 
 {/* flex within the box to create a side bar area */}
