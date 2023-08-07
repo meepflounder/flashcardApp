@@ -50,29 +50,24 @@ export default function SideBar() {
                 <Flex mt={3} align="center">
                     <Flex flexDir="column">
                         <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
-                        {folderList.map(txt => <Text color = "blue">{txt}</Text>)}
-
 
                         <Accordion defaultIndex={[0]} allowMultiple>
-
-                        {/* while we have something in our array, we create these accordion items */}
-                            <AccordionItem>
+                            {folderList.map((folderList, index) => (
+                                <AccordionItem key={index}>
                                 <h2>
-                                <AccordionButton>
+                                    <AccordionButton>
                                     <Box as="span" flex='1' textAlign='left'>
-                                    Folder Name
+                                        {folderList}
                                     </Box>
                                     <AccordionIcon />
-                                </AccordionButton>
+                                    </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4}>
-                                Decks within the corresponding folder name
+                                    Decks within the {folderList}
                                 </AccordionPanel>
-                            </AccordionItem>
-                            </Accordion>
-
-
-
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
                     </Flex>
                 </Flex>
             </Flex>
