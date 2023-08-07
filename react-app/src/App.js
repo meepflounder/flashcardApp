@@ -6,13 +6,13 @@ import {
 import chakraTheme from './styling/chakraTheme';
 //import GroceryListApp from './GroceryList';
 //import TicTacToeApp from './TicTacToe';
-import HomePageSideBar from './HomePageSideBar';
+import SideBar from './SideBar';
 
 function App() {
 
     return (
         <ChakraProvider theme={chakraTheme}>
-            <HomePageSideBar />
+            <SideBar />
         </ChakraProvider>
     );
 }
