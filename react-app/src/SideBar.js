@@ -5,6 +5,7 @@ const folderList = ["Neuroscience", "Computer Science", "English"];
 
 
 
+//have a flex within the box to create a side bar. 
 export default function SideBar() {
     return (
     <Box
@@ -15,7 +16,6 @@ export default function SideBar() {
             pos="sitcky"
             left="5"
             h="100vh"
-            //marginTop="2.5vh"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
             w="200px"
             flexDir="column"
