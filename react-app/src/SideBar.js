@@ -4,12 +4,11 @@ import { Flex, Text, Box, Divider, Heading,
        } from "@chakra-ui/react";
 
 
-const folderList = ["Neuroscience", "Computer Science", "English"];
-const neuroscienceList = ["Neuropharmacology", "Neural Development"];
-const csList = ["Discrete Structures", "Data Structures"];
-const englishList = ["Grammar", "Books"]; 
-
-
+const folderData = {
+    "Neuroscience": ["Neuropharmacology", "Neural Development"],
+    "Computer Science": ["Discrete Structures", "Data Structures"],
+    "English":["Grammar", "Books"],
+};
 
 export default function SideBar() {
     return (
@@ -52,22 +51,27 @@ export default function SideBar() {
                         <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
 
                         <Accordion defaultIndex={[0]} allowMultiple>
-                            {folderList.map((folderList, index) => (
+                            {Object.keys(folderData).map((folderName, index) => (
                                 <AccordionItem key={index}>
                                 <h2>
                                     <AccordionButton>
                                     <Box as="span" flex='1' textAlign='left'>
-                                        {folderList}
+                                        {folderName}
                                     </Box>
                                     <AccordionIcon />
                                     </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4}>
-                                    Decks within the {folderList}
+                                    <ul>
+                                    {folderData[folderName].map((uniqueName, uniqueIndex) => (
+                                        <li key={uniqueIndex}>{uniqueName}</li>
+                                    ))}
+                                    </ul>
                                 </AccordionPanel>
                                 </AccordionItem>
                             ))}
                         </Accordion>
+
                     </Flex>
                 </Flex>
             </Flex>
