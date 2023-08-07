@@ -5,13 +5,14 @@ import {
 
 import chakraTheme from './styling/chakraTheme';
 //import GroceryListApp from './GroceryList';
-import TicTacToeApp from './TicTacToe';
+//import TicTacToeApp from './TicTacToe';
+import HomePageSideBar from './HomePageSideBar';
 
 function App() {
 
     return (
         <ChakraProvider theme={chakraTheme}>
-            <TicTacToeApp />
+            <HomePageSideBar />
         </ChakraProvider>
     );
 }
