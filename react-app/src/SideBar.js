@@ -3,6 +3,8 @@ import { Flex, Text, Box, Divider, Heading, Button,
          Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
          Menu, MenuButton, MenuList, MenuItem, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider
        } from "@chakra-ui/react";
+import backgroundImage from'./backgroundImage.png';
+
 
 
 const folderData = {
@@ -18,9 +20,10 @@ export default function SideBar() {
     <Box
         w = "100%"
         align = "right"
-        bgImage="url('flashcardapp/react-app/public/backgroundImage.png')"
+        bgImage= {backgroundImage}
         bgPosition="center"
         bgRepeat="no-repeat"
+        bgSize="cover"
     > 
 
 {/* flex within the box to create a side bar area */}
@@ -32,7 +35,7 @@ export default function SideBar() {
             w="200px"
             flexDir="column"
             justifyContent="space-between"
-            bg = "purple"
+            bg = "sideBarColor"
         >
 {/* flex within the flex allows us to seperate our flex into 2 areas (2 more flexes) */}
             <Flex
@@ -90,8 +93,8 @@ export default function SideBar() {
                     </Flex>
                 </Flex>
             </Flex>
-            <Menu>
-                <MenuButton as={Button}>
+            <Menu display="flex" flexDirection="column" alignItems="center">
+                <MenuButton as={Button} m="10px auto" mb="10" w="100px" bg="addButtonColor" _hover={{ bg: 'hoverButtonColor' }}>
                     Add New
                 </MenuButton>
                 <MenuList>
