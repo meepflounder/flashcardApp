@@ -21,6 +21,7 @@ export const colors = {
   sideBarColor: '#2E3742',
   addButtonColor: '#8F6175',
   hoverButtonColor: '#553D47',
+  hoverBlueButtonColor: '#191D23',
 
 };
 

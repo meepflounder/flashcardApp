@@ -4,7 +4,7 @@ import { Flex, Box, Divider, Heading, Button,
          Menu, MenuButton, MenuList, MenuItem,
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
-import CurvedButton from './CurvedButton';
+import {CurvedButton, PracticeButton} from './CurvedButton';
 
 
 
@@ -26,6 +26,7 @@ export default function SideBar() {
         bgRepeat="no-repeat"
         bgSize="cover"
     > 
+
 
 {/* flex within the box to create a side bar area */}
         <Flex
@@ -55,6 +56,7 @@ export default function SideBar() {
                             <MenuButton as={Button} mt="2px" w="90px" h="20px"color="white" bg="sideBarColor" fontSize="sm">
                                 Username
                             </MenuButton>
+
                             <MenuList>
                                 <MenuItem>Account Settings</MenuItem>
                                 <MenuItem>Log Out</MenuItem>

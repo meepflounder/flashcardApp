@@ -6,6 +6,7 @@ import {
 import chakraTheme from './styling/chakraTheme';
 //import TicTacToeApp from './TicTacToe';
 import SideBar from './SideBar';
+import mainPageCards from './mainPageCards';
 
 
 function App() {
