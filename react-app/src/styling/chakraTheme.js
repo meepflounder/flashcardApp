@@ -18,6 +18,10 @@ export const colors = {
     light: '#696E77',
   },
 
+  sideBarColor: '#2E3742',
+  addButtonColor: '#8F6175',
+  hoverButtonColor: '#553D47',
+
 };
 
 
