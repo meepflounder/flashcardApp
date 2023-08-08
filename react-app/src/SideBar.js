@@ -4,6 +4,7 @@ import { Flex, Text, Box, Divider, Heading, Button,
          Menu, MenuButton, MenuList, MenuItem, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
+import curvedButton from './curvedButton';
 
 
 
@@ -94,7 +95,7 @@ export default function SideBar() {
                 </Flex>
             </Flex>
             <Menu display="flex" flexDirection="column" alignItems="center">
-                <MenuButton as={Button} m="10px auto" mb="10" w="100px" bg="addButtonColor" _hover={{ bg: 'hoverButtonColor' }}>
+                <MenuButton as={curvedButton}>
                     Add New
                 </MenuButton>
                 <MenuList>
