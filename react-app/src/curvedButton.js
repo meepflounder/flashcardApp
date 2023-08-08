@@ -4,10 +4,11 @@ const CurvedButton = ({ children, ...rest }) => {
   return (
     <Button
       variant="solid"
-      borderRadius="full"
+      borderRadius="20px"
       m="10px auto"
       mb="10"
-      w="100px"
+      w="143px"
+      h="40px"
       bg="addButtonColor"
       _hover={{ bg: 'hoverButtonColor' }}
 
