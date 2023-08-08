@@ -1,7 +1,7 @@
 import React from 'react';
-import { Flex, Text, Box, Divider, Heading, Button,
+import { Flex, Box, Divider, Heading, Button,
          Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
-         Menu, MenuButton, MenuList, MenuItem, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider
+         Menu, MenuButton, MenuList, MenuItem,
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
 import CurvedButton from './CurvedButton';
@@ -49,10 +49,10 @@ export default function SideBar() {
 {/* area 1 is for the username stuff */}
                 <Flex mt={1} mb={3} align="center">
                     <Flex flexDir="column">
-                        <Heading as="h3" size="sm" color="gray"> Flashcard App</Heading>
+                        <Heading color="white" fontSize='2xl'>Flashcard App</Heading>
 
                         <Menu>
-                            <MenuButton as={Button}>
+                            <MenuButton as={Button} mt="2px" w="90px" h="20px"color="white" bg="sideBarColor" fontSize="sm">
                                 Username
                             </MenuButton>
                             <MenuList>
@@ -67,14 +67,14 @@ export default function SideBar() {
                 <Divider /> 
                 <Flex mt={3} align="center">
                     <Flex flexDir="column">
-                        <Heading as="h3" size="sm" color="gray"> Folders & Decks </Heading>
+                        <Heading fontSize="m" color = "white"> Folders & Decks </Heading>
 
 {/* accordion for all the folders and decks */}
                         <Accordion defaultIndex={[0]} allowMultiple>
                             {Object.keys(folderData).map((folderName, index) => (
-                                <AccordionItem key={index}>
+                                <AccordionItem key={index} sx={{ border: "none" }}>
                                 <h2>
-                                    <AccordionButton>
+                                    <AccordionButton sx={{justifyContent: "flex-start", pl: 0, pr: "20px",}}>
                                     <Box as="span" flex='1' textAlign='left'>
                                         {folderName}
                                     </Box>

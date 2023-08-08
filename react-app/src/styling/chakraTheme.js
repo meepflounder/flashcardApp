@@ -1,10 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 
-const fonts = {
-  heading: 'Poppins',
-  body: 'Poppins',
-  p: 'Poppins',
-};
+// const fonts = {
+//   heading: 'Poppins',
+//   body: 'Poppins',
+//   p: 'Poppins',
+// };
 
 export const colors = {
   product: {
@@ -101,8 +101,21 @@ const components = {
   },
 };
 
+
 const customTheme = extendTheme({
-  fonts,
+  fonts: {
+    heading: `'quattrocento-sans', sans-serif`,
+    body: `'quattrocento-sans', sans-serif`,
+  },
+
+  styles: {
+    global: {
+      body: {
+        color: "white", // Change this to the desired font color
+      },
+    },
+  },
+
   colors,
   components,
 });

@@ -4,9 +4,9 @@ import {
 } from '@chakra-ui/react';
 
 import chakraTheme from './styling/chakraTheme';
-//import GroceryListApp from './GroceryList';
 //import TicTacToeApp from './TicTacToe';
 import SideBar from './SideBar';
+
 
 function App() {
 

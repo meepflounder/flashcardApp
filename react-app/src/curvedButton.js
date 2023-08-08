@@ -12,6 +12,9 @@ const CurvedButton = ({ children, ...rest }) => {
       bg="addButtonColor"
       _hover={{ bg: 'hoverButtonColor' }}
 
+      fontFamily="quattrocento-sans, sans-serif"
+      color = "white"
+
       {...rest} // Pass any additional props to the underlying Chakra Button component
     >
       {children}
