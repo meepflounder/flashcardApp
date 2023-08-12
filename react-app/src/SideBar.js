@@ -19,12 +19,12 @@ export default function SideBar() {
 
         
     <Box
-        w = "100%"
-        align = "right"
-        bgImage= {backgroundImage}
-        bgPosition="center"
-        bgRepeat="no-repeat"
-        bgSize="cover"
+        // w = "100%"
+        // align = "right"
+        // bgImage= {backgroundImage}
+        // bgPosition="center"
+        // bgRepeat="no-repeat"
+        // bgSize="cover"
     > 
 
 

@@ -1,19 +1,23 @@
 import React from 'react';
 import {
-  ChakraProvider,
+HStack, ChakraProvider,
 } from '@chakra-ui/react';
 
 import chakraTheme from './styling/chakraTheme';
 //import TicTacToeApp from './TicTacToe';
 import SideBar from './SideBar';
-import mainPageCards from './mainPageCards';
+import CardContents from './CardContents';
 
 
 function App() {
 
     return (
         <ChakraProvider theme={chakraTheme}>
-            <SideBar />
+            <HStack spacing="0px" h="100vh">
+                <CardContents /> 
+            {/* <mainPageCards /> */}
+                <SideBar />
+            </HStack>
         </ChakraProvider>
     );
 }
