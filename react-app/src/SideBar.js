@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Box, Divider, Heading, Button,
          Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
-         Menu, MenuButton, MenuList, MenuItem,
+         Menu, MenuButton, MenuList, MenuItem, 
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
 import {CurvedButton, PracticeButton} from './CurvedButton';
