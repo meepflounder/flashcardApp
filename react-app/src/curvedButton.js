@@ -1,6 +1,8 @@
+import React from 'react';
 import { Button } from "@chakra-ui/react";
 
-const CurvedButton = ({ children, ...rest }) => {
+// CurvedButton Component
+export const CurvedButton = ({ children, ...rest }) => {
   return (
     <Button
       variant="solid"
@@ -13,7 +15,7 @@ const CurvedButton = ({ children, ...rest }) => {
       _hover={{ bg: 'hoverButtonColor' }}
 
       fontFamily="quattrocento-sans, sans-serif"
-      color = "white"
+      color="white"
 
       {...rest} // Pass any additional props to the underlying Chakra Button component
     >
@@ -22,5 +24,27 @@ const CurvedButton = ({ children, ...rest }) => {
   );
 };
 
-export default CurvedButton;
+// PracticeButton Component
+export const PracticeButton = ({ children, ...rest }) => {
+  return (
+    <Button
+      variant="solid"
+      borderRadius="20px"
+      //m="10px auto"
+      //mb="10"
+      w="244px"
+      h="55px"
+      bg="sideBarColor"
+      _hover={{ bg: 'hoverBlueButtonColor' }}
 
+      fontFamily="quattrocento-sans, sans-serif"
+      color="white"
+      fontSize="xl"
+      fontWeight="normal"
+      style={{ position: 'absolute', top: '90px', left: '0px', zIndex: '100' }}
+      {...rest} // Pass any additional props to the underlying Chakra Button component
+    >
+      {children}
+    </Button>
+  );
+};

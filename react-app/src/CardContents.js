@@ -40,6 +40,11 @@ const termData = [
   const finalRef = React.useRef(null)
 
     return (
+
+    <>
+               <PracticeButton onClick={onOpen}>Practice Mode</PracticeButton>
+
+       
         <Box
             w="100%"
             h="100%"
@@ -54,6 +59,7 @@ const termData = [
             css={{ scrollBehavior: 'smooth', overflowY: 'scroll' }}
             
         >
+
             <div>
                 {termData.map((item, index) => (
                     <Card
@@ -149,5 +155,6 @@ const termData = [
 
 
         </Box>
+        </>
     )
 }

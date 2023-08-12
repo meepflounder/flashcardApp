@@ -7,6 +7,7 @@ import chakraTheme from './styling/chakraTheme';
 //import TicTacToeApp from './TicTacToe';
 import SideBar from './SideBar';
 import CardContents from './CardContents';
+import PracticePage from './PracticePage';
 
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
     return (
         <ChakraProvider theme={chakraTheme}>
             <HStack spacing="0px" h="100vh">
+                {/* <PracticePage /> */}
                 <CardContents /> 
-            {/* <mainPageCards /> */}
                 <SideBar />
             </HStack>
         </ChakraProvider>
