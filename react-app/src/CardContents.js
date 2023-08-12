@@ -1,21 +1,48 @@
 import React from 'react';
-import {Box, Card, Stack, Text, CardBody, Divider
+import {Box, Card, Stack, Text, CardBody, Divider, Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton, Button, Input, FormLabel, FormControl, useDisclosure,
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
+import {CurvedButton, PracticeButton} from './CurvedButton';
+
 
 const termData = [
     {
-      term: 'Term 1',
-      definition: 'Definition 1 for Term 1',
+      term: 'What does S stand for in the SOLID Principles?',
+      definition: 'Single Responsibility Rule',
     },
     {
       term: 'Term 2',
       definition: 'Definition 2 for Term 2',
-    },
+    },{
+        term: 'Term 2',
+        definition: 'Definition 2 for Term 2',
+      },{
+        term: 'Term 2',
+        definition: 'Definition 2 for Term 2',
+      },{
+        term: 'Term 2',
+        definition: 'Definition 2 for Term 2',
+      },{
+        term: 'Term 2',
+        definition: 'Definition 2 for Term 2',
+      },
     // Add more term data objects as needed
   ];
 
   export default function CardContents() {
+
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
+
     return (
         <Box
             w="100%"
@@ -28,6 +55,8 @@ const termData = [
             pb="134px"
             pr="165px"
             pl="292px"
+            css={{ scrollBehavior: 'smooth', overflowY: 'scroll' }}
+            
         >
             <div>
                 {termData.map((item, index) => (
@@ -45,11 +74,13 @@ const termData = [
                         <Stack position="relative"> {/* Add position:relative */}
                             <Text
                                 objectFit='cover'
-                                maxW={{ base: '100%', sm: '200px' }}
-                                textAlign="center"
+                                w="225px"
+                                textAlign="left"
                                 fontSize="sm"
                                 fontWeight="bold"
                                 p={4}
+                                pt="21px"
+                                color="sideBarColor"
                             >
                                 {item.term}
                             </Text>
@@ -61,7 +92,7 @@ const termData = [
                                     transform: 'translateX(-50%)',
                                     width: '1px',     // Adjust the width of the line
                                     height: '100%',
-                                    backgroundColor: 'black', // Line color
+                                    backgroundColor: "lineColor", // Line color
                                     content: "''",
                                 }}
                             ></div>
@@ -70,10 +101,12 @@ const termData = [
                         <Stack>
                             <CardBody>
                                 <Text
-                                    maxW={{ base: '100%', sm: '200px' }}
-                                    textAlign="center"
+                                    //maxW={{ base: '100%', sm: '200px' }}
+                                    textAlign="left"
                                     fontSize="sm"
-                                    fontWeight="bold"
+                                    //fontWeight="bold"
+                                    color="sideBarColor"
+                                    
                                 >
                                     {item.definition}
                                 </Text>
@@ -82,6 +115,43 @@ const termData = [
                     </Card>
                 ))}
             </div>
+
+
+<Button onClick={onOpen}>Add New</Button>
+
+      <Modal
+        initialFocusRef={initialRef}
+        finalFocusRef={finalRef}
+        isOpen={isOpen}
+        onClose={onClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>Term</FormLabel>
+              <Input ref={initialRef} placeholder='Term' />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Definition</FormLabel>
+              <Input placeholder='Definition' />
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3}>
+              Save
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+
+
+
         </Box>
     )
 }
