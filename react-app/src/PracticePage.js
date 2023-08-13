@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button, IconButton, } from '@chakra-ui/react';
 import backgroundImage from './backgroundImage.png';
 import { PracticeButton } from './CurvedButton';
 import Flashcard from './Flashcard';
+import {ArrowRightIcon, ArrowLeftIcon} from '@chakra-ui/icons'
+
 
 const PracticePage = () => {
   const cards = [
@@ -16,6 +18,16 @@ const PracticePage = () => {
       frontContent: <div>Front of Card 2</div>,
       backContent: <div>Back of Card 2</div>,
     },
+    {
+        id: 3,
+        frontContent: <div>Front of Card 3</div>,
+        backContent: <div>Back of Card 3</div>,
+      },
+      {
+        id: 4,
+        frontContent: <div>Front of Card 4</div>,
+        backContent: <div>Back of Card 4</div>,
+      },
     // Add more cards as needed
   ];
 
@@ -47,16 +59,35 @@ const PracticePage = () => {
         justifyContent="center"
         alignItems="center"
       >
+        <IconButton
+          fontSize="3xl"
+          mr="20px"
+          bg="rgba(201, 189, 181, 0.25)"
+          color="addButtonColor"
+          aria-label="Go Right"
+          icon={<ArrowLeftIcon />}
+          onClick={handleNextCard}
+        />
         <Flashcard
           frontContent={cards[activeCardIndex].frontContent}
           backContent={cards[activeCardIndex].backContent}
           isFlipped={flippedCardIds.includes(cards[activeCardIndex].id)}
           onFlip={() => handleCardFlip(cards[activeCardIndex].id)}
         />
-        <Button onClick={handleNextCard}>Next Card</Button>
+        <IconButton
+          fontSize="3xl"
+          ml="20px"
+          bg="rgba(201, 189, 181, 0.25)"
+          color="addButtonColor"
+          aria-label="Go Right"
+          icon={<ArrowRightIcon />}
+          onClick={handleNextCard}
+        />
       </Box>
     </>
   );
 };
+
+
 
 export default PracticePage;
