@@ -96,7 +96,7 @@ export default function SideBar() {
                                 <AccordionPanel pb={4}>
                                     <ul>
                                     {folderData[folderName].map((uniqueName, uniqueIndex) => (
-                                        <li key={uniqueIndex}>{uniqueName}</li>
+                                        <Text key={uniqueIndex} fontSize="sm" color = "white">{uniqueName}</Text>
                                     ))}
                                     </ul>
                                 </AccordionPanel>

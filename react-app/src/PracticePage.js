@@ -1,14 +1,23 @@
 import React from 'react';
-import { Text, Icon, HStack, } from "@chakra-ui/react";
-import { EditIcon, DeleteIcon, WarningIcon } from '@chakra-ui/icons'
+import { Box } from "@chakra-ui/react";
+import backgroundImage from'./backgroundImage.png';
+
+
 
 
 const PracticePage = () => {
   return (
-    <HStack>
-  <Icon as={DeleteIcon} boxSize={6} color="black"/>
-  <Icon as={EditIcon} boxSize={6} color="black"/>
-</HStack>
+    <Box
+            w="100wh"
+            h="100vh"
+            bgImage={backgroundImage}
+            bgPosition="center"
+            bgRepeat="no-repeat"
+            bgSize="cover"   
+    >
+    
+    
+    </Box>
   );
 };
 
