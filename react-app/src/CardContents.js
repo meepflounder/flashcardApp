@@ -1,10 +1,12 @@
 import React from 'react';
 import {Box, Card, Stack, Text, CardBody, Button,
         Input, FormLabel, FormControl, useDisclosure, 
-        Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton,
+        Modal, ModalOverlay, ModalContent, ModalFooter, ModalBody, ModalCloseButton,
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
 import {CurvedButton, PracticeButton} from './CurvedButton';
+import PracticePage from './PracticePage';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 const termData = [
@@ -42,9 +44,10 @@ const termData = [
     return (
 
     <>
-               <PracticeButton onClick={onOpen}>Practice Mode</PracticeButton>
 
-       
+               <PracticeButton to="/new-page">Practice Mode</PracticeButton>
+  
+
         <Box
             w="100%"
             h="100%"
@@ -119,31 +122,32 @@ const termData = [
             </div>
 
 
-<Button onClick={onOpen}>Add New</Button>
+<CurvedButton onClick={onOpen} ml="300px">Add New Card</CurvedButton>
 
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
         isOpen={isOpen}
         onClose={onClose}
+        placement="center"
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent w="50%" bg="cardColor" color="sideBarColor">
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <FormControl>
-              <FormLabel>Term</FormLabel>
+            <FormControl mt = "25px">
+              <FormLabel fontSize="xl" fontWeight="bold">Term</FormLabel>
               <Input ref={initialRef} placeholder='Term' />
             </FormControl>
 
-            <FormControl mt={4}>
-              <FormLabel>Definition</FormLabel>
+            <FormControl mt="25px">
+              <FormLabel fontSize="xl" fontWeight="bold">Definition</FormLabel>
               <Input placeholder='Definition' />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button bg='addButtonColor' color ="white" mr={3}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>

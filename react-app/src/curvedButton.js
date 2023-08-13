@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 
 // CurvedButton Component
 export const CurvedButton = ({ children, ...rest }) => {
@@ -25,7 +26,15 @@ export const CurvedButton = ({ children, ...rest }) => {
 };
 
 // PracticeButton Component
-export const PracticeButton = ({ children, ...rest }) => {
+export const PracticeButton = ({ children, to, ...rest }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (to) {
+      navigate(to);
+    }
+  };
+
   return (
     <Button
       variant="solid"
@@ -42,6 +51,7 @@ export const PracticeButton = ({ children, ...rest }) => {
       fontSize="xl"
       fontWeight="normal"
       style={{ position: 'absolute', top: '90px', left: '0px', zIndex: '100' }}
+      onClick={handleClick}
       {...rest} // Pass any additional props to the underlying Chakra Button component
     >
       {children}
