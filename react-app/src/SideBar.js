@@ -2,6 +2,9 @@ import React from 'react';
 import { Flex, Box, Divider, Heading, Button,
          Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon,
          Menu, MenuButton, MenuList, MenuItem,
+         Card, Stack, Text, CardBody, HStack, IconButton,
+        Input, FormLabel, FormControl, useDisclosure, 
+        Modal, ModalOverlay, ModalContent, ModalFooter, ModalBody, ModalCloseButton, ModalHeader,
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
 import {CurvedButton, PracticeButton} from './CurvedButton';
@@ -15,8 +18,15 @@ const folderData = {
 };
 
 export default function SideBar() {
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
+  
     return (
 
+        <>
         
     <Box
         // w = "100%"
@@ -52,7 +62,7 @@ export default function SideBar() {
                     <Flex flexDir="column">
                         <Heading color="white" fontSize='2xl'>Flashcard App</Heading>
 
-                        <Menu>
+                        {/* <Menu>
                             <MenuButton as={Button} mt="2px" w="90px" h="20px"color="white" bg="sideBarColor" fontSize="sm">
                                 Username
                             </MenuButton>
@@ -61,7 +71,7 @@ export default function SideBar() {
                                 <MenuItem>Account Settings</MenuItem>
                                 <MenuItem>Log Out</MenuItem>
                             </MenuList>
-                        </Menu>
+                        </Menu> */}
                     </Flex>
                 </Flex>
 
@@ -96,17 +106,43 @@ export default function SideBar() {
                     </Flex>
                 </Flex>
             </Flex>
-            <Menu display="flex" flexDirection="column" alignItems="center">
-                <MenuButton as={CurvedButton}>
-                    Add New
-                </MenuButton>
-                <MenuList placement="top-start">
-                    <MenuItem>New Deck</MenuItem>
-                    <MenuItem>New Folder</MenuItem>
-                </MenuList>
-            </Menu>
+
+   <Stack align="center" pb="22px" spacing="10px">
+      <CurvedButton onClick={onOpen}>New Folder</CurvedButton>
+      <CurvedButton onClick={onOpen}> New Deck</CurvedButton>
+
+      <Modal
+        initialFocusRef={initialRef}
+        finalFocusRef={finalRef}
+        isOpen={isOpen}
+        onClose={onClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody pt="30px" pb="10px">
+            <FormControl>
+              {/* <FormLabel color="black">Name</FormLabel> */}
+              <Input ref={initialRef} placeholder='Name' />
+            </FormControl>
+
+            
+          </ModalBody>
+
+          <ModalFooter>
+            <Button bg='addButtonColor' color ="white" mr={3}>
+              Save
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+</Stack>
         </Flex>
     </Box>
+
+    </>
     )
 }
 

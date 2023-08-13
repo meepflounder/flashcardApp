@@ -1,12 +1,12 @@
 import React from 'react';
-import {Box, Card, Stack, Text, CardBody, Button,
+import {Box, Card, Stack, Text, CardBody, Button, HStack, IconButton,
         Input, FormLabel, FormControl, useDisclosure, 
         Modal, ModalOverlay, ModalContent, ModalFooter, ModalBody, ModalCloseButton,
        } from "@chakra-ui/react";
 import backgroundImage from'./backgroundImage.png';
 import {CurvedButton, PracticeButton} from './CurvedButton';
-import PracticePage from './PracticePage';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { EditIcon, DeleteIcon,} from '@chakra-ui/icons'
+
 
 
 const termData = [
@@ -102,11 +102,11 @@ const termData = [
                                 }}
                             ></div>
                         </Stack>
-            
                         <Stack>
                             <CardBody>
                                 <Text
                                     //maxW={{ base: '100%', sm: '200px' }}
+                                    w="405px"
                                     textAlign="left"
                                     fontSize="sm"
                                     //fontWeight="bold"
@@ -117,12 +117,18 @@ const termData = [
                                 </Text>
                             </CardBody>
                         </Stack>
+                        <Stack>
+                            <HStack spacing="0px" pt="12px">
+                            <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Delete Card' icon={<DeleteIcon />}/>
+                            <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Edit Card' icon={<EditIcon />}/>
+                            </HStack>
+                        </Stack>
                     </Card>
                 ))}
             </div>
 
-
-<CurvedButton onClick={onOpen} ml="300px">Add New Card</CurvedButton>
+<Stack>
+    <CurvedButton onClick={onOpen} ml="300px" mt="10px" mb="10px">Add New Card</CurvedButton>
 
       <Modal
         initialFocusRef={initialRef}
@@ -154,7 +160,7 @@ const termData = [
           </ModalFooter>
         </ModalContent>
       </Modal>
-
+</Stack>
 
 
 

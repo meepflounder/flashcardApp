@@ -8,8 +8,8 @@ export const CurvedButton = ({ children, ...rest }) => {
     <Button
       variant="solid"
       borderRadius="20px"
-      m="10px auto"
-      mb="10"
+      //m="10px auto"
+     // mb="10"
       w="143px"
       h="40px"
       bg="addButtonColor"
