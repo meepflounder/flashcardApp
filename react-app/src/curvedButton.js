@@ -39,7 +39,7 @@ export const PracticeButton = ({ children, to, ...rest }) => {
     <Button
       variant="solid"
       borderRadius="20px"
-      //m="10px auto"
+      m="-20px"
       //mb="10"
       w="244px"
       h="55px"
