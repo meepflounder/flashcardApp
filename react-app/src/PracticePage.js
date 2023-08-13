@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, IconButton, } from '@chakra-ui/react';
+import { Box, IconButton, Stack, Text, } from '@chakra-ui/react';
 import backgroundImage from './backgroundImage.png';
 import { PracticeButton } from './CurvedButton';
 import Flashcard from './Flashcard';
@@ -68,12 +68,15 @@ const PracticePage = () => {
           icon={<ArrowLeftIcon />}
           onClick={handleNextCard}
         />
+        <Stack>
         <Flashcard
           frontContent={cards[activeCardIndex].frontContent}
           backContent={cards[activeCardIndex].backContent}
           isFlipped={flippedCardIds.includes(cards[activeCardIndex].id)}
           onFlip={() => handleCardFlip(cards[activeCardIndex].id)}
         />
+        <Text fontSize="xl" color="white" align="center">Click Card to Flip</Text>
+        </Stack>
         <IconButton
           fontSize="3xl"
           ml="20px"
