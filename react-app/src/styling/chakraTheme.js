@@ -23,7 +23,8 @@ export const colors = {
   hoverButtonColor: '#553D47',
   hoverBlueButtonColor: '#191D23',
   cardColor: '#C9BDB5',
-  lineColor: '#898685',
+  lineColor: '#AEA096',
+  modalColor: '#CAC8C1',
 
 };
 

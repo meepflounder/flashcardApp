@@ -10,18 +10,18 @@ const PracticePage = () => {
   const cards = [
     {
       id: 1,
-      frontContent: <div>Front of Card 1</div>,
-      backContent: <div>Back of Card 1</div>,
+      frontContent: <div>what does the S in SOLID stand for?</div>,
+      backContent: <div>single responsibility rule</div>,
     },
     {
       id: 2,
-      frontContent: <div>Front of Card 2</div>,
-      backContent: <div>Back of Card 2</div>,
+      frontContent: <div>what is turnip</div>,
+      backContent: <div>a little bunny man</div>,
     },
     {
         id: 3,
-        frontContent: <div>Front of Card 3</div>,
-        backContent: <div>Back of Card 3</div>,
+        frontContent: <div>where are grunions native to</div>,
+        backContent: <div>southern california</div>,
       },
       {
         id: 4,

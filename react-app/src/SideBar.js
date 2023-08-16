@@ -48,6 +48,7 @@ export default function SideBar() {
             flexDir="column"
             justifyContent="space-between"
             bg = "sideBarColor"
+            //boxShadow="dark-lg"
         >
 {/* flex within the flex allows us to seperate our flex into 2 areas (2 more flexes) */}
             <Flex
@@ -62,16 +63,27 @@ export default function SideBar() {
                     <Flex flexDir="column">
                         <Heading color="white" fontSize='2xl'>Flashcard App</Heading>
 
-                        {/* <Menu>
-                            <MenuButton as={Button} mt="2px" w="90px" h="20px"color="white" bg="sideBarColor" fontSize="sm">
+                        <Menu>
+                            <MenuButton as={Button} 
+                                pl="0px" 
+                                mt="2px" 
+                                w="90px" 
+                                h="20px"
+                                color="white" 
+                                bg="sideBarColor" 
+                                fontSize="sm" 
+                                _hover={{bg: 'sideBarColor'}} 
+                                _active={{ bg: 'sideBarColor'}}
+                            >
                                 Username
                             </MenuButton>
 
-                            <MenuList>
-                                <MenuItem>Account Settings</MenuItem>
-                                <MenuItem>Log Out</MenuItem>
+                            <MenuList borderColor="white"bg="cardColor">
+                                <MenuItem bg="cardColor">Account Settings</MenuItem>
+                                <Divider/> 
+                                <MenuItem bg="cardColor">Log Out</MenuItem>
                             </MenuList>
-                        </Menu> */}
+                        </Menu>
                     </Flex>
                 </Flex>
 
@@ -79,7 +91,7 @@ export default function SideBar() {
                 <Divider /> 
                 <Flex mt={3} align="center">
                     <Flex flexDir="column">
-                        <Heading fontSize="m" color = "white"> Folders & Decks </Heading>
+                        <Heading fontSize="l" color = "white"> Folders & Decks </Heading>
 
 {/* accordion for all the folders and decks */}
                         <Accordion defaultIndex={[0]} allowMultiple>

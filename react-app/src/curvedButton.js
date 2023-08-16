@@ -13,6 +13,7 @@ export const CurvedButton = ({ children, ...rest }) => {
       w="143px"
       h="40px"
       bg="addButtonColor"
+      boxShadow="dark-lg"
       _hover={{ bg: 'hoverButtonColor' }}
 
       fontFamily="quattrocento-sans, sans-serif"
@@ -44,6 +45,7 @@ export const PracticeButton = ({ children, to, ...rest }) => {
       w="244px"
       h="55px"
       bg="sideBarColor"
+      boxShadow="dark-lg"
       _hover={{ bg: 'hoverBlueButtonColor' }}
 
       fontFamily="quattrocento-sans, sans-serif"

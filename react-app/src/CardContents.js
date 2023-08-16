@@ -15,7 +15,7 @@ const termData = [
       definition: 'Single Responsibility Rule',
     },
     {
-      term: 'Term 2',
+      term: 'hello 2',
       definition: 'Definition 2 for Term 2',
     },{
         term: 'Term 2',
@@ -75,6 +75,8 @@ const termData = [
                         h="144px"
                         mb="31px"
                         borderColor="cardColor"
+                        rounded="xl"
+                        boxShadow="dark-lg"
                     >
                         <Stack position="relative"> {/* Add position:relative */}
                             <Text
@@ -95,9 +97,9 @@ const termData = [
                                     top: 0,
                                     left: '100%',
                                     transform: 'translateX(-50%)',
-                                    width: '1px',     // Adjust the width of the line
+                                    width: '2px',     // Adjust the width of the line
                                     height: '100%',
-                                    backgroundColor: "lineColor", // Line color
+                                    backgroundColor:"rgba(170, 157, 149, 0.96)",
                                     content: "''",
                                 }}
                             ></div>
@@ -138,7 +140,7 @@ const termData = [
         placement="center"
       >
         <ModalOverlay />
-        <ModalContent w="50%" bg="cardColor" color="sideBarColor">
+        <ModalContent w="50%" bg="modalColor" color="sideBarColor">
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl mt = "25px">
