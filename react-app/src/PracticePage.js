@@ -75,7 +75,7 @@ const PracticePage = () => {
           isFlipped={flippedCardIds.includes(cards[activeCardIndex].id)}
           onFlip={() => handleCardFlip(cards[activeCardIndex].id)}
         />
-        <Text fontSize="xl" color="white" align="center">Click Card to Flip</Text>
+        <Text fontSize="xl" color="sideBarColor" align="center">Click Card to Flip</Text>
         </Stack>
         <IconButton
           fontSize="3xl"

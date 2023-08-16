@@ -12,8 +12,8 @@ const Flashcard = ({ frontContent, backContent }) => {
     <Box
       w="774px"
       h="492px"
-      border="1px solid #ccc"
-      borderRadius="10px"
+      borderColor="cardColor"
+      borderRadius="40px"
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -21,8 +21,11 @@ const Flashcard = ({ frontContent, backContent }) => {
       cursor="pointer"
       onClick={handleFlip}
       bg="cardColor"
-      fontWeight="bold"
+      fontWeight="medium"
       fontSize="4xl"
+      rounded="3xl"
+      boxShadow="dark-lg"
+      color="sideBarColor"
     >
       {isFlipped ? backContent : frontContent}
     </Box>
