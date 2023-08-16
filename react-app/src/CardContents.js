@@ -85,7 +85,9 @@ const termData = [
                                 textAlign="left"
                                 fontSize="sm"
                                 fontWeight="bold"
-                                p={4}
+                                pl={4}
+                                pb={4}
+                                pr="10px"
                                 pt="21px"
                                 color="sideBarColor"
                             >

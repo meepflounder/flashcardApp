@@ -78,7 +78,7 @@ export default function SideBar() {
                                 Username
                             </MenuButton>
 
-                            <MenuList borderColor="white"bg="cardColor">
+                            <MenuList borderColor="white" bg="cardColor">
                                 <MenuItem bg="cardColor">Account Settings</MenuItem>
                                 <Divider/> 
                                 <MenuItem bg="cardColor">Log Out</MenuItem>

@@ -22,7 +22,7 @@ export const colors = {
   addButtonColor: '#8F6175',
   hoverButtonColor: '#553D47',
   hoverBlueButtonColor: '#191D23',
-  cardColor: '#C9BDB5',
+  cardColor: 'rgba(201,189,181,.95)',
   lineColor: '#AEA096',
   modalColor: '#CAC8C1',
 
