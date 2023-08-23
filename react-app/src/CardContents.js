@@ -13,14 +13,18 @@ export default function CardContents({flashcardData, setFlashcardData}) {
   const finalRef = React.useRef(null)
   const [newTerm, setNewTerm] = useState();
   const [newDefinition, setNewDefinition] = useState();
+  const [lastUsedId, setLastUsedId] = useState(0);
+
 
   const handleSave = () => {
     const newFlashcard = {
+      id: lastUsedId + 1,
       term: newTerm,
       definition: newDefinition,
     };
 
     setFlashcardData(prevData => [...prevData, newFlashcard]);
+    setLastUsedId(lastUsedId + 1);
     onClose(); // Close the modal
   };
 
@@ -51,9 +55,9 @@ export default function CardContents({flashcardData, setFlashcardData}) {
         >
 
             <div>
-                {flashcardData.map((item, index) => (
+                {flashcardData.map((item) => (
                     <Card
-                        key={index}
+                        key={item.id}
                         direction={{ base: 'column', sm: 'row' }}
                         overflow='hidden'
                         variant='outline'
