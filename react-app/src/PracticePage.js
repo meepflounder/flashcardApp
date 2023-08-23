@@ -4,32 +4,33 @@ import backgroundImage from './backgroundImage.png';
 import { PracticeButton } from './CurvedButton';
 import Flashcard from './Flashcard';
 import {ArrowRightIcon, ArrowLeftIcon} from '@chakra-ui/icons'
+import { useFlashcardData } from './FlashcardDataContext';
 
 
-const PracticePage = () => {
-  const cards = [
-    {
-      id: 1,
-      frontContent: <div>what does the S in SOLID stand for?</div>,
-      backContent: <div>single responsibility rule</div>,
-    },
-    {
-      id: 2,
-      frontContent: <div>what is turnip</div>,
-      backContent: <div>a little bunny man</div>,
-    },
-    {
-        id: 3,
-        frontContent: <div>where are grunions native to</div>,
-        backContent: <div>southern california</div>,
-      },
-      {
-        id: 4,
-        frontContent: <div>Front of Card 4</div>,
-        backContent: <div>Back of Card 4</div>,
-      },
-    // Add more cards as needed
-  ];
+const PracticePage = ({flashcardData}) => {
+
+  // const cards = [
+  //   {
+  //     id: 1,
+  //     frontContent: <div>what does the S in SOLID stand for?</div>,
+  //     backContent: <div>single responsibility rule</div>,
+  //   },
+  //   {
+  //     id: 2,
+  //     frontContent: <div>what is turnip</div>,
+  //     backContent: <div>a little bunny man</div>,
+  //   },
+  //   {
+  //       id: 3,
+  //       frontContent: <div>where are grunions native to</div>,
+  //       backContent: <div>southern california</div>,
+  //     },
+  //     {
+  //       id: 4,
+  //       frontContent: <div>Front of Card 4</div>,
+  //       backContent: <div>Back of Card 4</div>,
+  //     },
+  // ];
 
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [flippedCardIds, setFlippedCardIds] = useState([]);
@@ -41,7 +42,7 @@ const PracticePage = () => {
   };
 
   const handleNextCard = () => {
-    setActiveCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
+    setActiveCardIndex((prevIndex) => (prevIndex + 1) % flashcardData.length);
     setFlippedCardIds([]);
   };
 
@@ -70,10 +71,10 @@ const PracticePage = () => {
         />
         <Stack>
         <Flashcard
-          frontContent={cards[activeCardIndex].frontContent}
-          backContent={cards[activeCardIndex].backContent}
-          isFlipped={flippedCardIds.includes(cards[activeCardIndex].id)}
-          onFlip={() => handleCardFlip(cards[activeCardIndex].id)}
+          frontContent={flashcardData[activeCardIndex].term}
+          backContent={flashcardData[activeCardIndex].definition}
+          isFlipped={flippedCardIds.includes(flashcardData[activeCardIndex].id)}
+          onFlip={() => handleCardFlip(flashcardData[activeCardIndex].id)}
         />
         <Text fontSize="xl" color="sideBarColor" align="center">Click Card to Flip</Text>
         </Stack>

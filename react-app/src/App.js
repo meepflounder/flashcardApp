@@ -4,6 +4,7 @@ import chakraTheme from './styling/chakraTheme';
 import SideBar from './SideBar';
 import CardContents from './CardContents';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {FlashcardDataProvider} from './FlashcardDataContext'
 import PracticePage from './PracticePage';
 
 // const initialFlashcardData = [
@@ -48,10 +49,12 @@ function App() {
   return (
     <Router>
       <ChakraProvider theme={chakraTheme}>
+        <FlashcardDataProvider>
         <Routes>
           <Route path="/" element={<Home flashcardData={flashcardData} setFlashcardData={setFlashcardData} />} />
-          <Route path="/new-page" element={<PracticePage />} />
+          <Route path="/new-page" element={<PracticePage flashcardData={flashcardData} setFlashcardData={setFlashcardData}/>} />
         </Routes>
+        </FlashcardDataProvider>
       </ChakraProvider>
     </Router>
   );
