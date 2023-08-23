@@ -6,32 +6,32 @@ import CardContents from './CardContents';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PracticePage from './PracticePage';
 
-const initialFlashcardData = [
-  {
-    term: 'What does S stand for in the SOLID Principles?',
-    definition: 'Single Responsibility Rule',
-  },
-  {
-    term: 'hello 2',
-    definition: 'Definition 2 for Term 2',
-  },
-  {
-    term: 'peanut butter',
-    definition: 'is disgusting',
-  },
-  {
-    term: 'Term 2',
-    definition: 'Definition 2 for Term 2',
-  },
-  {
-    term: 'Term 2',
-    definition: 'Definition 2 for Term 2',
-  },
-  {
-    term: 'Term 2',
-    definition: 'Definition 2 for Term 2',
-  },
-];
+// const initialFlashcardData = [
+//   {
+//     term: 'What does S stand for in the SOLID Principles?',
+//     definition: 'Single Responsibility Rule',
+//   },
+//   {
+//     term: 'hello 2',
+//     definition: 'Definition 2 for Term 2',
+//   },
+//   {
+//     term: 'peanut butter',
+//     definition: 'is disgusting',
+//   },
+//   {
+//     term: 'Term 2',
+//     definition: 'Definition 2 for Term 2',
+//   },
+//   {
+//     term: 'Term 2',
+//     definition: 'Definition 2 for Term 2',
+//   },
+//   {
+//     term: 'Term 2',
+//     definition: 'Definition 2 for Term 2',
+//   },
+// ];
 
 function Home({ flashcardData, setFlashcardData }) {
   return (
@@ -43,7 +43,7 @@ function Home({ flashcardData, setFlashcardData }) {
 }
 
 function App() {
-  const [flashcardData, setFlashcardData] = useState(initialFlashcardData); 
+  const [flashcardData, setFlashcardData] = useState([]); // was previously useState(initialFlashcardData)
 
   return (
     <Router>
