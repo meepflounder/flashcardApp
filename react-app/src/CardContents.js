@@ -16,6 +16,19 @@ export default function CardContents({flashcardData, setFlashcardData}) {
   const [lastUsedId, setLastUsedId] = useState(0);
 
 
+  const handleDelete = (id) => {
+    const updatedFlashcardData = flashcardData.filter(item => item.id !== id);
+    setFlashcardData(updatedFlashcardData);
+  
+    // Update the IDs of the remaining cards
+    const updatedDataWithNewIDs = updatedFlashcardData.map((item, index) => ({
+      ...item,
+      id: index + 1,
+    }));
+    setFlashcardData(updatedDataWithNewIDs);
+  };
+  
+  
   const handleSave = () => {
     const newFlashcard = {
       id: lastUsedId + 1,
@@ -55,7 +68,7 @@ export default function CardContents({flashcardData, setFlashcardData}) {
         >
 
             <div>
-                {flashcardData.map((item) => (
+                {flashcardData.map((item, index) => (
                     <Card
                         key={item.id}
                         direction={{ base: 'column', sm: 'row' }}
@@ -114,7 +127,7 @@ export default function CardContents({flashcardData, setFlashcardData}) {
                         </Stack>
                         <Stack>
                             <HStack spacing="0px" pt="12px">
-                            <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Delete Card' icon={<DeleteIcon />}/>
+                            <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Delete Card' icon={<DeleteIcon />} onClick={() => handleDelete(item.id)}/>
                             <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Edit Card' icon={<EditIcon />}/>
                             </HStack>
                         </Stack>
