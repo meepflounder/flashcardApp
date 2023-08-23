@@ -46,6 +46,11 @@ const PracticePage = ({flashcardData}) => {
     setFlippedCardIds([]);
   };
 
+  const handlePrevCard = () => {
+    setActiveCardIndex((prevIndex) => (prevIndex-1 + flashcardData.length) % flashcardData.length);
+    setFlippedCardIds([]);
+  }; 
+
   return (
     <>
       <PracticeButton to="/">Exit Practice</PracticeButton>
@@ -67,7 +72,7 @@ const PracticePage = ({flashcardData}) => {
           color="addButtonColor"
           aria-label="Go Right"
           icon={<ArrowLeftIcon />}
-          onClick={handleNextCard}
+          onClick={handlePrevCard}
         />
         <Stack>
         <Flashcard
