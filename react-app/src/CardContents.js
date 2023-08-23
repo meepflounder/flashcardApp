@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Box, Card, Stack, Text, CardBody, Button, HStack, IconButton,
         Input, FormLabel, FormControl, useDisclosure, 
         Modal, ModalOverlay, ModalContent, ModalFooter, ModalBody, ModalCloseButton,
@@ -7,39 +7,26 @@ import backgroundImage from'./backgroundImage.png';
 import {CurvedButton, PracticeButton} from './CurvedButton';
 import { EditIcon, DeleteIcon,} from '@chakra-ui/icons'
 
-
-
-const termData = [
-    {
-      term: 'What does S stand for in the SOLID Principles?',
-      definition: 'Single Responsibility Rule',
-    },
-    {
-      term: 'hello 2',
-      definition: 'Definition 2 for Term 2',
-    },{
-        term: 'Term 2',
-        definition: 'Definition 2 for Term 2',
-      },{
-        term: 'Term 2',
-        definition: 'Definition 2 for Term 2',
-      },{
-        term: 'Term 2',
-        definition: 'Definition 2 for Term 2',
-      },{
-        term: 'Term 2',
-        definition: 'Definition 2 for Term 2',
-      },
-    // Add more term data objects as needed
-  ];
-
-  export default function CardContents() {
-
-
-    const { isOpen, onOpen, onClose } = useDisclosure()
-
+export default function CardContents({flashcardData, setFlashcardData}) {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
+  const [newTerm, setNewTerm] = useState();
+  const [newDefinition, setNewDefinition] = useState();
+
+  const handleSave = () => {
+    const newFlashcard = {
+      term: newTerm,
+      definition: newDefinition,
+    };
+
+    setFlashcardData(prevData => [...prevData, newFlashcard]);
+    onClose(); // Close the modal
+  };
+
+  useEffect(() => {
+    console.log('Flashcard data updated:', flashcardData);
+  }, [flashcardData]);
 
     return (
 
@@ -64,7 +51,7 @@ const termData = [
         >
 
             <div>
-                {termData.map((item, index) => (
+                {flashcardData.map((item, index) => (
                     <Card
                         key={index}
                         direction={{ base: 'column', sm: 'row' }}
@@ -147,17 +134,17 @@ const termData = [
           <ModalBody pb={6}>
             <FormControl mt = "25px">
               <FormLabel fontSize="xl" fontWeight="bold">Term</FormLabel>
-              <Input ref={initialRef} placeholder='Term' />
+              <Input ref={initialRef} placeholder='Term' onChange={(e) => setNewTerm(e.target.value)}/>
             </FormControl>
 
             <FormControl mt="25px">
               <FormLabel fontSize="xl" fontWeight="bold">Definition</FormLabel>
-              <Input placeholder='Definition' />
+              <Input placeholder='Definition' onChange={(e) => setNewDefinition(e.target.value)}/>
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button bg='addButtonColor' color ="white" mr={3}>
+            <Button bg='addButtonColor' color ="white" mr={3} onClick={handleSave}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
