@@ -23,6 +23,7 @@ const Flashcard = ({ frontContent, backContent }) => {
       bg="cardColor"
       fontWeight="medium"
       fontSize="4xl"
+      textAlign={"center"}
       rounded="3xl"
       boxShadow="dark-lg"
       color="sideBarColor"
