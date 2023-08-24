@@ -49,7 +49,7 @@ export default function CardContents({flashcardData, setFlashcardData}) {
 
     <>
 
-               <PracticeButton to="/new-page">Practice Mode</PracticeButton>
+      <PracticeButton to="/new-page">Practice Mode</PracticeButton>
   
 
         <Box
@@ -126,9 +126,24 @@ export default function CardContents({flashcardData, setFlashcardData}) {
                             </CardBody>
                         </Stack>
                         <Stack>
-                            <HStack spacing="0px" pt="12px">
-                            <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Delete Card' icon={<DeleteIcon />} onClick={() => handleDelete(item.id)}/>
-                            <IconButton fontSize="xl" size="sm" colorScheme="cardColor" color="addButtonColor" aria-label='Edit Card' icon={<EditIcon />}/>
+                            <HStack 
+                              spacing="0px" 
+                              pt="12px">
+                            <IconButton 
+                              fontSize="xl" 
+                              size="sm" 
+                              colorScheme="cardColor" 
+                              color="addButtonColor" 
+                              aria-label='Delete Card' 
+                              icon={<DeleteIcon />} 
+                              onClick={() => handleDelete(item.id)}/>
+                            <IconButton 
+                              fontSize="xl" 
+                              size="sm" 
+                              colorScheme="cardColor" 
+                              color="addButtonColor" 
+                              aria-label='Edit Card' 
+                              icon={<EditIcon />}/>
                             </HStack>
                         </Stack>
                     </Card>
@@ -136,7 +151,13 @@ export default function CardContents({flashcardData, setFlashcardData}) {
             </div>
 
 <Stack>
-    <CurvedButton onClick={onOpen} ml="300px" mt="10px" mb="10px">Add New Card</CurvedButton>
+    <CurvedButton 
+      onClick={onOpen} 
+      ml="300px" 
+      mt="10px" 
+      mb="10px">
+        Add New Card
+    </CurvedButton>
 
       <Modal
         initialFocusRef={initialRef}
@@ -146,23 +167,40 @@ export default function CardContents({flashcardData, setFlashcardData}) {
         placement="center"
       >
         <ModalOverlay />
-        <ModalContent w="50%" bg="modalColor" color="sideBarColor">
+        <ModalContent 
+          w="50%" 
+          bg="modalColor" 
+          color="sideBarColor">
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <FormControl mt = "25px">
-              <FormLabel fontSize="xl" fontWeight="bold">Term</FormLabel>
+            <FormControl 
+              mt = "25px">
+              <FormLabel 
+                fontSize="xl" 
+                fontWeight="bold">
+                  Term
+              </FormLabel>
               <Input ref={initialRef} placeholder='Term' onChange={(e) => setNewTerm(e.target.value)}/>
             </FormControl>
 
-            <FormControl mt="25px">
-              <FormLabel fontSize="xl" fontWeight="bold">Definition</FormLabel>
+            <FormControl 
+              mt="25px">
+              <FormLabel 
+                fontSize="xl" 
+                fontWeight="bold">
+                  Definition
+              </FormLabel>
               <Input placeholder='Definition' onChange={(e) => setNewDefinition(e.target.value)}/>
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button bg='addButtonColor' color ="white" mr={3} onClick={handleSave}>
-              Save
+            <Button 
+              bg='addButtonColor' 
+              color ="white" 
+              mr={3} 
+              onClick={handleSave}>
+                Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>

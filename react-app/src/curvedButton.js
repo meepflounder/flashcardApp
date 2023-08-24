@@ -52,7 +52,10 @@ export const PracticeButton = ({ children, to, ...rest }) => {
       color="white"
       fontSize="xl"
       fontWeight="normal"
-      style={{ position: 'absolute', top: '100px', left: '0px', zIndex: '100' }}
+      style={{ position: 'absolute', 
+              top: '100px', 
+              left: '0px', 
+              zIndex: '100' }}
       onClick={handleClick}
       {...rest} // Pass any additional props to the underlying Chakra Button component
     >
